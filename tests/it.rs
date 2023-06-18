@@ -72,3 +72,18 @@ enum Whew<'a: 'b, 'b, 'c, T, U> {
     #[subenum(Phew)]
     B(&'b [&'c [U; 7]]),
 }
+
+#[deny(missing_docs)]
+pub mod docs {
+    use subenum::subenum;
+
+    #[deny(missing_docs)]
+    #[subenum(Nice)]
+    pub enum Dude {
+        #[subenum(Nice)]
+        A,
+        #[subenum(Nice)]
+        B,
+        C,
+    }
+}
